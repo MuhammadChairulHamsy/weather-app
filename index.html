@@ -7,19 +7,37 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Check the weather</h1>
-      <form>
-        <label for="text">Masukan Nama Kota:</label>
-        <input type="text" name="text" id="text-input" />
-      </form>
-      <button id="search-weather" type="submit">Lihat Cuaca</button>
+    <div class="root">
+      <div class="container">
+        <div class="card">
+          <h1>Check the weather</h1>
+          <form>
+            <label for="text">Masukan Nama Kota:</label>
+            <input
+              type="text"
+              name="text"
+              id="text-input"
+              placeholder="Contoh: Jakarta, London, Tokyo..."
+            />
+          </form>
+          <button id="search-weather" type="submit">Lihat Cuaca</button>
 
-      <div id="result" class="weather-result"></div>
+          <div id="result" class="weather-result"></div>
+        </div>
+
+        <div class="history">
+          <h2>History Pencarian</h2>
+          <ul id="history-list"></ul>
+          <button
+            id="clear-history"
+            class="clear-history"
+            style="display: none"
+          >
+            Hapus Semua History
+          </button>
+        </div>
+      </div>
     </div>
-
-   
-    
     <script src="./script.js"></script>
   </body>
 </html>

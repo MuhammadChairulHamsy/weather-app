@@ -1,8 +1,13 @@
+// BELUM ADD GITHUB
+
 const apiKey = "3811de17c98d9d47a56e1f2e4f0808e3";
 const baseUrl = "https://api.openweathermap.org/data/2.5/weather";
 
 const textInput = document.getElementById("text-input");
 const searchWeather = document.getElementById("search-weather");
+const historyList = document.getElementById("history-list");
+
+
 
 searchWeather.addEventListener("click", async (e) => {
   e.preventDefault();
@@ -33,8 +38,9 @@ searchWeather.addEventListener("click", async (e) => {
               <h5>Wind Speed: ${data.wind.speed} m/s</h5>
               <h5>Clouds: ${data.clouds.all}%</h5>
               <h4>Geo Coordinates: [${data.coord.lat}, ${data.coord.lon}]</h4>
-
     `;
+    addHistory(data.name);
+
   } catch (error) {
     if(error.message.includes("Failed to fetch")) {
       alert("Gagal terhubung ke server. Periksa koneksi internet kamu.");
@@ -49,3 +55,33 @@ textInput.addEventListener("keypress", (e) => {
     searchWeather.click();
   }
 });
+
+
+function addHistory(city) {
+  let history = JSON.parse(localStorage.getItem("Weather History")) || [];
+
+  if(!history.includes(city)) {
+    history.unshift(city)
+    if(history.length > 5) history.pop();
+    localStorage.setItem("Weather History", JSON.stringify(history));
+  }
+  renderHistory();
+}
+
+function renderHistory() {
+   let history = JSON.parse(localStorage.getItem("Weather History")) || [];
+
+   historyList.innerHTML = "";
+   history.forEach((city) => {
+    const li = document.createElement("li");
+    li.textContent = city;
+    li.style.cursor = "pointer";
+    li.onclick = () => {
+      textInput.value = city;
+      searchWeather.click();
+    };
+    historyList.appendChild(li);
+   });;
+}
+
+renderHistory();
