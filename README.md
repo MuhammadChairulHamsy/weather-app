@@ -9,6 +9,7 @@ A simple and responsive weather application built with **HTML**, **CSS**, and **
 - Dynamic weather icons
 - Celsius temperature unit
 - Responsive design
+- Save weather search history.
 
 ## 🧠 Technologies Used
 

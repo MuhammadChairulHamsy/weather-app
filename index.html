@@ -7,21 +7,24 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
+    <button class="theme-toggle" id="theme-toggle">
+      <span class="theme-icon">🌙</span>
+      <span>Dark Mode</span>
+    </button>
+
     <div class="root">
       <div class="container">
         <div class="card">
           <h1>Check the weather</h1>
           <form>
-            <label for="text">Masukan Nama Kota:</label>
+            <label for="text-input">Masukan Nama Kota:</label>
             <input
               type="text"
-              name="text"
               id="text-input"
               placeholder="Contoh: Jakarta, London, Tokyo..."
             />
           </form>
           <button id="search-weather" type="submit">Lihat Cuaca</button>
-
           <div id="result" class="weather-result"></div>
         </div>
 
@@ -38,6 +41,7 @@
         </div>
       </div>
     </div>
+
     <script src="./script.js"></script>
   </body>
 </html>
