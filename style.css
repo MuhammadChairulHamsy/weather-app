@@ -58,10 +58,10 @@
       background: var(--card-bg);
       border: 2px solid var(--border-color);
       border-radius: 50px;
-      padding: 12px 20px;
-      max-width: 200px;
+      max-width: 190px;
       cursor: pointer;
       display: flex;
+      justify-content: center;
       align-items: center;
       gap: 10px;
       font-weight: 600;
@@ -108,7 +108,7 @@
       animation: fadeIn 0.5s ease-in;
       transition: all 0.3s ease;
       border: 1px solid var(--border-color);
-    }
+}
 
     .card {
       max-width: 500px;
@@ -483,6 +483,8 @@
       font-size: 3em;
       margin-bottom: 10px;
     }
+
+    
 
     @media (max-width: 900px) {
       .container {

@@ -15,8 +15,8 @@
     <div class="root">
       <div class="container">
         <div class="card">
-          <h1>Check the weather</h1>
-          <form>
+          <h1>🌤️ Check the weather</h1>
+          <form class="search-form" id="weather-form">
             <label for="text-input">Masukan Nama Kota:</label>
             <input
               type="text"
@@ -26,6 +26,17 @@
           </form>
           <button id="search-weather" type="submit">Lihat Cuaca</button>
           <div id="result" class="weather-result"></div>
+
+          <!-- Current Weather Card -->
+        </div>
+        <div class="card" id="current-weather-card" style="display: none">
+          <div class="current-weather" id="current-weather"></div>
+        </div>
+
+        <!-- 5 Day Forecast Card -->
+        <div class="card" id="forecast-card" style="display: none">
+          <h2 class="forecast-title">📅 5-Day Forecast</h2>
+          <div class="forecast-grid" id="forecast-grid"></div>
         </div>
 
         <div class="history">
